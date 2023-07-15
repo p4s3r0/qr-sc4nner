@@ -1,5 +1,5 @@
 <template>
-<div :class="this.theme" id="position">
+<div id="position">
     <div id="button" width="40" height="40">
         <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
             <g clip-path="url(#clip0_3_11)">
@@ -11,15 +11,12 @@
 </template>
 
 <script>
-import { curr_theme } from '@/db/session_db';
-
 export default {
 name: 'ButtonSettings',
 components: {
 }, 
 data() {
     return { 
-        theme: curr_theme,
     }
 }
 }
@@ -27,7 +24,8 @@ data() {
 
 <style scoped>
 #position {
-    float: left
+    float: left;
+    margin-left: 20px;
 }
 
 #button {
@@ -36,6 +34,7 @@ data() {
     width: 50px;
     height: 50px;
     border-radius: 15px;
+    cursor: pointer;
 }
 
 svg {

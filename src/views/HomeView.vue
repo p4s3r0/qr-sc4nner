@@ -1,7 +1,9 @@
 <template>
 <div :class="this.theme">
+
+
     <div id="topBar">
-        <button-settings />
+        <button-settings @click="this.settings_modal_active = true;" />
         <h1>Home</h1>
     </div>
     <button-scan-qr id="positionScanQr" @gotNewScan="gotNewScan" @newScan="this.last_scan = null; this.out_data = 'Capturing new QR Code'" />
@@ -10,6 +12,8 @@
         <text-field-out :data="this.out_data" />
     </div>
 
+    <modal-setting-vue v-if="this.settings_modal_active" @exitModal="this.settings_modal_active = false" />
+    
 </div>
 </template>
 
@@ -21,19 +25,23 @@ import ButtonScanQr from '@/components/ButtonScanQr.vue'
 import TextFieldOut from '@/components/TextFieldOut.vue'
 import TextFieldLastScan from '@/components/TextFieldLastScan.vue';
 
+import ModalSettingVue from '@/modals/ModalSetting.vue';
+
 export default {
 name: 'App',
 components: {
     ButtonSettings,
     ButtonScanQr,
     TextFieldOut,
-    TextFieldLastScan
+    TextFieldLastScan,
+    ModalSettingVue
 }, 
 data() {
     return { 
         theme: curr_theme,
         out_data: "Scan a QR Code and see Content here",
-        last_scan: null
+        last_scan: null,
+        settings_modal_active: false
     }
 },
 methods: {

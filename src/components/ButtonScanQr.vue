@@ -56,6 +56,7 @@ methods: {
     width: 70vw;
     height: 70vw;
     border-radius: 15px;
+    cursor: pointer;
 }
 
 #badge {

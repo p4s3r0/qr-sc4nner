@@ -2,14 +2,92 @@
 
 
 .theme-yellow {
-    --main-color: #FFE500;
-    --alpha-color-20: #ffe60033;
+    --main-color: var(--color-yellow);
+    --alpha-color-20: var(--color-yellow-20);
 }
+
+.theme-red {
+    --main-color: var(--color-red);
+    --alpha-color-20: var(--color-red-20);
+}
+
+.theme-orange {
+    --main-color: var(--color-orange);
+    --alpha-color-20: var(--color-orange-20);
+}
+
+.theme-green {
+    --main-color: var(--color-green);
+    --alpha-color-20: var(--color-green-20);
+}
+
+.theme-turkys {
+    --main-color: var(--color-turky);
+    --alpha-color-20: var(--color-turky-20);
+}
+
+.theme-cyan {
+    --main-color: var(--color-cyan);
+    --alpha-color-20: var(--color-cyan-20);
+}
+
+.theme-skyblue {
+    --main-color: var(--color-skyblue);
+    --alpha-color-20: var(--color-skyblue-20);
+}
+
+.theme-blue {
+    --main-color: var(--color-blue);
+    --alpha-color-20: var(--color-blue-20);
+}
+
+.theme-violet {
+    --main-color: var(--color-violet);
+    --alpha-color-20: var(--color-violet-20);
+}
+
+.theme-magenta {
+    --main-color: var(--color-magenta);
+    --alpha-color-20: var(--color-magenta-20);
+}
+
+.theme-light-pink {
+    --main-color: var(--color-light-pink);
+    --alpha-color-20: var(--color-light-pink-20);
+}
+
+.theme-pink {
+    --main-color: var(--color-pink);
+    --alpha-color-20: var(--color-pink-20);
+}
+
+.theme-dark-pink {
+    --main-color: var(--color-dark-pink);
+    --alpha-color-20: var(--color-skybludark-pinke-20);
+}
+
+.theme-rosa {
+    --main-color: var(--color-rosa);
+    --alpha-color-20: var(--color-rosa-20);
+}
+
+.theme-gray {
+    --main-color: var(--color-gray);
+    --alpha-color-20: var(--color-gray-20);
+}
+
+.theme-white {
+    --main-color: var(--color-white);
+    --alpha-color-20: var(--color-white-20);
+}
+
+
 
 
 * {
     font-family: 'Cutive Mono', monospace;
     --background-color: #151515;
+    --background-alpha-20: #15151533;
     --striped-background: repeating-linear-gradient(
         45deg,
         var(--main-color),
@@ -17,6 +95,39 @@
         var(--background-color) 1px,
         var(--background-color) 10px
       );
+    /* main colors */
+    --color-red: #FF0000;
+    --color-red-20: #FF000033;
+    --color-orange: #FF8A00;
+    --color-orange-20: #FF8A0033;
+    --color-yellow: #FFE500;
+    --color-yellow-20: #FFE50033;
+    --color-green: #70FF00;
+    --color-green-20: #70FF0033;
+    --color-turkys: #00FFA3;
+    --color-turkys-20: #00FFA333;
+    --color-cyan: #00FFFF;
+    --color-cyan-20: #00FFFF33;
+    --color-skyblue: #00A3FF;
+    --color-skyblue-20: #00A3FF33;
+    --color-blue: #0047FF;
+    --color-blue-20: #0047FF33;
+    --color-violet: #8F00FF;
+    --color-violet-20: #8F00FF33;
+    --color-magenta: #DB00FF;
+    --color-magenta-20: #DB00FF33;
+    --color-light-pink: #FF00E5;
+    --color-light-pink-20: #FF00E533;
+    --color-pink: #FF00C7;
+    --color-pink-20: #FF00C733;
+    --color-dark-pink: #FF008A;
+    --color-dark-pink-20: #FF008A33;
+    --color-rosa: #FF008A;
+    --color-rosa-20: #FF008A33;
+    --color-gray: #8A8A8A;
+    --color-gray-20: #8A8A8A33;
+    --color-white: #FFFFFF;
+    --color-white-20: #FFFFFF33;
 }
 body {
     background-color: var(--background-color);
