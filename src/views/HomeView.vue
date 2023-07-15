@@ -4,9 +4,9 @@
         <button-settings />
         <h1>Home</h1>
     </div>
-    <button-scan-qr id="positionScanQr" />
+    <button-scan-qr id="positionScanQr" @newScan="gotNewScan"/>
     <div id="positionOut">
-        <text-field-out data="Scan a QR Code and see Content here" />
+        <text-field-out :data="this.out_data" />
     </div>
 
 </div>
@@ -29,10 +29,13 @@ components: {
 data() {
     return { 
         theme: curr_theme,
+        out_data: "Scan a QR Code and see Content here"
     }
 },
-beforeMount() {
-    console.log(curr_theme)
+methods: {
+    gotNewScan(data) {
+        this.out_data = data
+    }
 }
 }
 </script>

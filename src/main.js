@@ -1,8 +1,11 @@
 import { createApp } from 'vue'
 import App from './App.vue'
+
+import QrReader from 'vue3-qr-reader';
+import * as VueRouter from 'vue-router';
+
 import '@/db/local_db';
 import '@/global.css'
-import * as VueRouter from 'vue-router';
 
 import Home from '@/views/HomeView'
 
@@ -16,5 +19,5 @@ const router = VueRouter.createRouter({
     routes,
 });
 
-createApp(App).use(router).mount('#app')
+createApp(App).use(router).use(QrReader).mount('#app')
 

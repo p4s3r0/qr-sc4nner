@@ -1,8 +1,10 @@
 <template>
 <div :class="this.theme">
     <div id="button" width="40" height="40">
-        <div id="badge">
-            <p>Scan QR</p>
+        <QrStream v-if="this.scanner_active" @decode="onDecodeYo" />
+
+        <div id="badge" v-if="!this.scanner_active" @click="this.scanner_active=true ">
+            <p>{{ data }}</p>
         </div>
     </div>
 </div>
@@ -10,14 +12,40 @@
 
 <script>
 import { curr_theme } from '@/db/session_db';
+import { QrStream } from 'vue3-qr-reader';
+import { reactive, toRefs } from 'vue';
 
 export default {
 name: 'ButtonScanQr',
 components: {
+    QrStream
 }, 
 data() {
     return { 
         theme: curr_theme,
+        scanner_active: false
+    }
+},
+setup() {
+    const state = reactive({
+      data: "Scan QR"
+    })
+    function onDecode(data) {
+      state.data = data
+      console.log("son", state.data)
+      this.$emit("newScan", state.data)
+    }
+    return {
+      ...toRefs(state),
+      onDecode
+    }
+},
+methods: {
+    onDecodeYo(data) {
+        console.log("yup")
+        console.log(data)
+        this.$emit("newScan", data)
+        this.scanner_active = false
     }
 }
 }
