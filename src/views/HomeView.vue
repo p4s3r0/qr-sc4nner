@@ -4,7 +4,9 @@
         <button-settings @click="this.settings_modal_active = true;" />
         <h1>Home</h1>
     </div>
-    <scan-qr id="positionScanQr" @gotNewScan="gotNewScan" @newScan="this.last_scan = null; this.out_data = 'Capturing new QR Code'" />
+    <scan-qr id="positionScanQr" @gotNewScan="gotNewScan" 
+                                @newScan="this.last_scan = null; this.out_data = 'Capturing new QR Code'" 
+                                @scanClosed="this.out_data = 'Scan a QR Code and see Content here'"/>
     <div id="positionOut">
         <text-field-last-scan :data="this.last_scan" v-if="this.last_scan != null"/>
         <text-field-out :data="this.out_data" />
@@ -68,14 +70,14 @@ h1 {
 #positionScanQr {
     width: calc(80vw + 2 * 10px);
     position: relative;
-    margin-top: 40%;
+    margin-top: 55%;
     margin-left: 50%;
     transform: translate(-50%, -50%);
 }
 
 #positionOut {
     position: absolute;
-    top: calc(20% + 70vw + 30px);
+    top: calc(27.5% + 70vw + 30px);
     left: 50%;
     transform: translateX(-50%);
 }

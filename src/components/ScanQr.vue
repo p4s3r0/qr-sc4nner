@@ -3,7 +3,7 @@
     <div id="button" width="40" height="40">
         <div v-if="this.scanner_active" id="containerStream">
             <QrStream  @decode="onDecodeEmit"/>
-            <button-close-stream @click="this.scanner_active = false"/>
+            <button-close-stream @click="this.scanner_active = false; this.$emit('scanClosed')"/>
         </div>
 
 
