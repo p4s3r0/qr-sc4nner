@@ -1,5 +1,5 @@
 <template>
-<div :class="this.theme" id="position">
+<div :class="this.theme">
     <div id="button" width="40" height="40">
         <div id="badge">
             <p>Scan QR</p>
@@ -24,13 +24,6 @@ data() {
 </script>
 
 <style scoped>
-#position {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
 #button {
     position: relative;
     background: var(--striped-background);
@@ -51,6 +44,7 @@ data() {
 }
 
 p {
-    color: var(--background-color)
+    color: var(--background-color);
+    user-select: none;
 }
 </style>
