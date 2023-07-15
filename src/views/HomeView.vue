@@ -1,5 +1,5 @@
 <template>
-<div :class="this.theme">
+<div :class="this.theme" id="container">
     <div id="topBar">
         <button-settings @click="this.settings_modal_active = true;" />
         <h1>Home</h1>
@@ -71,10 +71,16 @@ methods: {
 </script>
 
 <style scoped>
+@media (min-aspect-ratio: 3/2) {
+  body {
+    background-color: #9ff; /* cyan */
+  }
+}
+
 #topBar {
     position: relative;
     display: flex;
-    margin-top: -30px;
+    margin-top: 30px;
 }
 
 h1 {

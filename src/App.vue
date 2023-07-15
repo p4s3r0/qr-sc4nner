@@ -1,5 +1,11 @@
 <template>
-  <router-view />
+    <router-view />
+    <div class="errorAspectRatio" >
+      <h1>
+        The Aspect Ratio of the Screen does not match the requirements. Please use a Smartphone!
+      </h1>
+    </div>
+
 </template>
 
 <script>
@@ -11,7 +17,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -20,5 +26,16 @@ export default {
   color: white;
   margin-top: 60px;
 }
+
+h1 {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 50vw;
+  color: #FFE500;
+}
+
+
 
 </style>
