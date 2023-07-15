@@ -2,14 +2,15 @@
 <div :class="this.theme">
     <div id="button" width="40" height="40">
         <div v-if="this.scanner_active" id="containerStream">
-            <QrStream  @decode="onDecodeEmit"/>
+            <QrStream @decode="onDecodeEmit"/>
             <button-close-stream @click="this.scanner_active = false; this.$emit('scanClosed')"/>
         </div>
 
-
-        <div id="badge" v-if="!this.scanner_active" @click="this.scanner_active=true; this.$emit('newScan');">
-            <p>{{ data }}</p>
-        </div>
+        <transition name="scan">
+            <div id="badge" v-if="!this.scanner_active" @click="this.scanner_active=true; this.$emit('newScan');">
+                <p>{{ data }}</p>
+            </div>
+        </transition>
     </div>
 </div>
 </template>
@@ -84,5 +85,27 @@ methods: {
 p {
     color: var(--background-color);
     user-select: none;
+}
+
+@keyframes bounce-in {
+    0% {
+        transform: scale(0);
+    }
+    50% {
+        transform: scale(1.25);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.scan-enter-from,
+.scan-leave-to {
+    opacity: 0;
+}
+
+.scan-enter-active,
+.scan-leave-active {
+    transition: opacity 1s ease;
 }
 </style>
