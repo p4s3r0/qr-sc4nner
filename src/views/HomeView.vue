@@ -5,11 +5,27 @@
         <h1>Home</h1>
     </div>
     <scan-qr id="positionScanQr" @gotNewScan="gotNewScan" 
-                                @newScan="this.last_scan = null; this.out_data = 'Capturing new QR Code'" 
-                                @scanClosed="this.out_data = 'Scan a QR Code and see Content here'"/>
+                                @newScan="this.last_scan = null; this.out_data = 'Scanning QR-Code...'" 
+                                @scanClosed="this.out_data = 'Scan a QR-Code to see the Content here!'"/>
     <div id="positionOut">
-        <text-field-last-scan :data="this.last_scan" v-if="this.last_scan != null"/>
-        <text-field-out :data="this.out_data" />
+
+        <transition name="lastscan" mode="out-in">
+            <div v-if="this.last_scan == null">
+                <transition name="lastscan" mode="out-in">
+                    <text-field-out v-if="this.out_data != 'Scanning QR-Code...'" :data="this.out_data" />
+                    <text-field-out v-else :data="this.out_data" />
+                </transition>
+            </div>
+            <div v-else>
+                <text-field-last-scan :data="this.last_scan" />
+                <text-field-out :data="this.out_data" />
+            </div>
+        </transition>
+
+        <transition name="lastscan" >
+        </transition>
+
+
     </div>
 
     <modal-setting-vue v-if="this.settings_modal_active" @exitModal="this.settings_modal_active = false" />
@@ -39,7 +55,7 @@ components: {
 data() {
     return { 
         theme: curr_theme,
-        out_data: "Scan a QR Code and see Content here",
+        out_data: "Scan a QR-Code to see the Content here!",
         last_scan: null,
         settings_modal_active: false
     }
@@ -81,4 +97,16 @@ h1 {
     left: 50%;
     transform: translateX(-50%);
 }
+
+.lastscan-enter-from,
+.lastscan-leave-to {
+    opacity: 0;
+}
+
+.lastscan-enter-active,
+.lastscan-leave-active {
+    transition: opacity 0.5s ease;
+}
+
+
 </style>
