@@ -17,6 +17,7 @@ export async function getTheme() {
 
     if (!curr_theme.length) {
         db.settings.add({'id': 0, 'theme': 'theme-yellow'})
+        return 'theme-yellow'
     }
     return curr_theme[0].theme;
 }
