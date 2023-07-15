@@ -1,7 +1,5 @@
 <template>
 <div :class="this.theme">
-
-
     <div id="topBar">
         <button-settings @click="this.settings_modal_active = true;" />
         <h1>Home</h1>
@@ -68,7 +66,7 @@ h1 {
 }
 
 #positionScanQr {
-    width: 70vw;
+    width: calc(80vw + 2 * 10px);
     position: relative;
     margin-top: 40%;
     margin-left: 50%;
