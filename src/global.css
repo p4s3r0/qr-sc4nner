@@ -22,8 +22,8 @@
 }
 
 .theme-turkys {
-    --main-color: var(--color-turky);
-    --alpha-color-20: var(--color-turky-20);
+    --main-color: var(--color-turkys);
+    --alpha-color-20: var(--color-turkys-20);
 }
 
 .theme-cyan {
