@@ -1,9 +1,9 @@
 <template>
     <div id="container">
-        <p key="1">
+        <p>
             Last Scan 
         </p>
-        <p id="time" key="2">
+        <p id="time">
             {{ this.data }}
         </p>
     </div>

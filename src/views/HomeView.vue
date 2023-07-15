@@ -48,7 +48,7 @@ methods: {
     gotNewScan(data) {
         this.out_data = data
         var today = new Date();
-        this.last_scan = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+        this.last_scan = today.getHours().toString().padStart(2, "0") + ":" + today.getMinutes().toString().padStart(2, "0") + ":" + today.getSeconds().toString().padStart(2, "0")
     }
 }
 }
