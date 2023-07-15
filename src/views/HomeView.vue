@@ -61,7 +61,7 @@ methods: {
 
 h1 {
     text-align: center;
-    width: calc(100% - 100px);
+    width: calc(100% - 150px);
     transform: translateY(-30%);
 }
 
