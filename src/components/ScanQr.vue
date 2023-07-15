@@ -80,6 +80,8 @@ methods: {
     border-radius: 15px;
     border: 2px solid var(--background-color);
     cursor: pointer;
+    transition-delay: 0.5s;
+
 }
 
 p {
@@ -87,17 +89,7 @@ p {
     user-select: none;
 }
 
-@keyframes bounce-in {
-    0% {
-        transform: scale(0);
-    }
-    50% {
-        transform: scale(1.25);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
+
 
 .scan-enter-from,
 .scan-leave-to {
