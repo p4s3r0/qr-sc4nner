@@ -48,6 +48,7 @@ methods: {
 
 <style scoped>
 #topBar {
+    position: relative;
     display: flex;
     margin-top: -30px;
 }
@@ -59,9 +60,10 @@ h1 {
 }
 
 #positionScanQr {
-    position: absolute;
-    top: 40%;
-    left: 50%;
+    width: 70vw;
+    position: relative;
+    margin-top: 40%;
+    margin-left: 50%;
     transform: translate(-50%, -50%);
 }
 
