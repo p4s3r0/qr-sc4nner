@@ -4,7 +4,7 @@
         <button-settings @click="this.settings_modal_active = true;" />
         <h1>Home</h1>
     </div>
-    <button-scan-qr id="positionScanQr" @gotNewScan="gotNewScan" @newScan="this.last_scan = null; this.out_data = 'Capturing new QR Code'" />
+    <scan-qr id="positionScanQr" @gotNewScan="gotNewScan" @newScan="this.last_scan = null; this.out_data = 'Capturing new QR Code'" />
     <div id="positionOut">
         <text-field-last-scan :data="this.last_scan" v-if="this.last_scan != null"/>
         <text-field-out :data="this.out_data" />
@@ -19,7 +19,7 @@
 import { curr_theme } from '@/db/session_db';
 
 import ButtonSettings from '@/components/ButtonSettings.vue';
-import ButtonScanQr from '@/components/ButtonScanQr.vue'
+import ScanQr from '@/components/ScanQr.vue'
 import TextFieldOut from '@/components/TextFieldOut.vue'
 import TextFieldLastScan from '@/components/TextFieldLastScan.vue';
 
@@ -29,7 +29,7 @@ export default {
 name: 'App',
 components: {
     ButtonSettings,
-    ButtonScanQr,
+    ScanQr,
     TextFieldOut,
     TextFieldLastScan,
     ModalSettingVue

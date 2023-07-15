@@ -66,7 +66,6 @@ methods: {
     width: 80vw;
     height: 80vw;
     border-radius: 15px;
-    cursor: pointer;
     padding: 10px;
 }
 
@@ -79,6 +78,7 @@ methods: {
     background-color: var(--main-color);
     border-radius: 15px;
     border: 2px solid var(--background-color);
+    cursor: pointer;
 }
 
 p {
