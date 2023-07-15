@@ -1,9 +1,9 @@
 <template>
     <div id="container">
-        <p>
+        <p key="1">
             Last Scan 
         </p>
-        <p id="time">
+        <p id="time" key="2">
             {{ this.data }}
         </p>
     </div>
@@ -27,6 +27,7 @@ props: {
     padding: 5px 20px 5px 20px;
     display: flex;
     margin-bottom: 10px;
+    margin-left: 10vw;
 }
 
 p {
@@ -39,4 +40,5 @@ p {
     right: 20px;
     text-align: right;
 }
+
 </style>

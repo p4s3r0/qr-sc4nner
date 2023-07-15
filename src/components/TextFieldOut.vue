@@ -1,16 +1,16 @@
 <template>
-<div :class="this.theme" id="position">
+<div id="position">
     <div id="container">
-        <p>
-            {{ this.data }}
-        </p>
+        <Transition>
+            <p>
+                {{ this.data }}
+            </p>
+        </Transition>
     </div>
 </div>
 </template>
 
 <script>
-import { curr_theme } from '@/db/session_db';
-
 export default {
 name: 'ButtonSettings',
 components: {
@@ -20,7 +20,6 @@ props: {
 },
 data() {
     return { 
-        theme: curr_theme,
     }
 }
 }
@@ -38,5 +37,15 @@ data() {
 
 p {
     text-align: left;
+}
+
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
 }
 </style>

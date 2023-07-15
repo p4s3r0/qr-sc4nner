@@ -8,7 +8,7 @@
                                 @newScan="this.last_scan = null; this.out_data = 'Capturing new QR Code'" 
                                 @scanClosed="this.out_data = 'Scan a QR Code and see Content here'"/>
     <div id="positionOut">
-        <text-field-last-scan :data="this.last_scan" v-if="this.last_scan != null"/>
+            <text-field-last-scan :data="this.last_scan" v-if="this.last_scan != null"/>
         <text-field-out :data="this.out_data" />
     </div>
 
