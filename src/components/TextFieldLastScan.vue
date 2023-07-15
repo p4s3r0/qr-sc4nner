@@ -1,28 +1,20 @@
 <template>
-<div :class="this.theme" id="position">
     <div id="container">
         <p>
+            Last Scan 
+        </p>
+        <p id="time">
             {{ this.data }}
         </p>
     </div>
-</div>
 </template>
 
 <script>
-import { curr_theme } from '@/db/session_db';
-
 export default {
-name: 'ButtonSettings',
-components: {
-}, 
+name: 'TextFieldLastScan',
 props: {
     data: String
 },
-data() {
-    return { 
-        theme: curr_theme,
-    }
-}
 }
 </script>
 
@@ -30,13 +22,21 @@ data() {
 #container {
     position: relative;
     width: calc(70vw - 40px);
-    border: 1px solid var(--main-color);
+    background-color: var(--alpha-color-20);
     border-radius: 10px;
-    padding: 0px 20px 0px 20px;
-    overflow-wrap: break-word;
+    padding: 5px 20px 5px 20px;
+    display: flex;
+    margin-bottom: 10px;
 }
 
 p {
     text-align: left;
+}
+
+#time {
+    position: absolute;
+    width: 100%;
+    right: 20px;
+    text-align: right;
 }
 </style>

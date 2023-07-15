@@ -1,9 +1,9 @@
 <template>
 <div :class="this.theme">
     <div id="button" width="40" height="40">
-        <QrStream v-if="this.scanner_active" @decode="onDecodeYo" />
+        <QrStream v-if="this.scanner_active" @decode="onDecodeEmit" />
 
-        <div id="badge" v-if="!this.scanner_active" @click="this.scanner_active=true ">
+        <div id="badge" v-if="!this.scanner_active" @click="this.scanner_active=true; this.$emit('newScan');">
             <p>{{ data }}</p>
         </div>
     </div>
@@ -41,10 +41,8 @@ setup() {
     }
 },
 methods: {
-    onDecodeYo(data) {
-        console.log("yup")
-        console.log(data)
-        this.$emit("newScan", data)
+    onDecodeEmit(data) {
+        this.$emit("gotNewScan", data)
         this.scanner_active = false
     }
 }
