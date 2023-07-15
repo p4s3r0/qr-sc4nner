@@ -19,6 +19,7 @@
             <button-color-choice color_="gray" @click="changeTheme('theme-gray')"/>
             <button-color-choice color_="white" @click="changeTheme('theme-white')"/>
         </div>
+        <p>@v1.0</p>
         <button-back id="positionButtonBack" @click="this.$emit('exitModal')"/>
     </div>
 </template>
@@ -91,5 +92,12 @@ svg {
     position: absolute;
     bottom: 15px;
     right: 15px;
+}
+
+p {
+    position: absolute;
+    bottom: 0px;
+    left: 15px;
+    opacity: 0.5;
 }
 </style>
