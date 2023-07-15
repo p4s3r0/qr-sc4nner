@@ -63,7 +63,7 @@
 
 .theme-dark-pink {
     --main-color: var(--color-dark-pink);
-    --alpha-color-20: var(--color-skybludark-pinke-20);
+    --alpha-color-20: var(--color-dark-pink-20);
 }
 
 .theme-rosa {
