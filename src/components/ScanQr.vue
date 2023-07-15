@@ -81,7 +81,6 @@ methods: {
     border: 2px solid var(--background-color);
     cursor: pointer;
     transition-delay: 0.5s;
-
 }
 
 p {

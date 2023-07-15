@@ -12,7 +12,7 @@
         <transition name="lastscan" mode="out-in">
             <div v-if="this.last_scan == null">
                 <transition name="lastscan" mode="out-in">
-                    <text-field-out v-if="this.out_data != 'Scanning QR-Code...'" :data="this.out_data" />
+                    <text-field-out v-if="this.out_data != 'Scanning QR-Code...'" :data="this.out_data" style="transition-delay: 0.5s;"/>
                     <text-field-out v-else :data="this.out_data" />
                 </transition>
             </div>
