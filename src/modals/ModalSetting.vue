@@ -67,8 +67,8 @@ methods: {
     margin-top: 20vh;
     position: relative;
     height: 40vh;
-    left: 15%;
-    width: 70%;
+    left: 8%;
+    width: 80%;
 }
 
 #button {
