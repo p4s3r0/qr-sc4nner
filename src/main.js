@@ -8,6 +8,7 @@ import '@/db/local_db';
 import '@/global.css'
 
 import Home from '@/views/HomeView'
+import './registerServiceWorker'
 
 const routes = [{
     path: "/",
