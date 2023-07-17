@@ -4,31 +4,34 @@
         <button-settings @click="this.settings_modal_active = true;" />
         <h1>Home</h1>
     </div>
-    <scan-qr id="positionScanQr" @gotNewScan="gotNewScan" 
-                                @newScan="this.last_scan = null; this.out_data = 'Scanning QR-Code...'" 
-                                @scanClosed="this.out_data = 'Scan a QR-Code to see the Content here!'"/>
-    <div id="positionOut">
+    <div id="wholeContainer">
 
-        <transition name="lastscan" mode="out-in">
-            <div v-if="this.last_scan == null">
-                <transition name="lastscan" mode="out-in">
-                    <text-field-out v-if="this.out_data != 'Scanning QR-Code...'" :data="this.out_data" style="transition-delay: 0.5s;"/>
-                    <text-field-out v-else :data="this.out_data" />
-                </transition>
-            </div>
-            <div v-else>
-                <text-field-last-scan :data="this.last_scan" />
-                <text-field-out :data="this.out_data" />
-            </div>
-        </transition>
+        <scan-qr id="positionScanQr" @gotNewScan="gotNewScan" 
+                                    @newScan="this.last_scan = null; this.out_data = 'Scanning QR-Code...'" 
+                                    @scanClosed="this.out_data = 'Scan a QR-Code to see the Content here!'"/>
+        <div id="positionOut">
 
-        <transition name="lastscan" >
-        </transition>
+            <transition name="lastscan" mode="out-in">
+                <div v-if="this.last_scan == null">
+                    <transition name="lastscan" mode="out-in">
+                        <text-field-out v-if="this.out_data != 'Scanning QR-Code...'" :data="this.out_data" style="transition-delay: 0.5s;"/>
+                        <text-field-out v-else :data="this.out_data" />
+                    </transition>
+                </div>
+                <div v-else>
+                    <text-field-last-scan :data="this.last_scan" />
+                    <text-field-out :data="this.out_data" />
+                </div>
+            </transition>
+
+            <transition name="lastscan" >
+            </transition>
 
 
+        </div>
     </div>
 
-    <modal-setting-vue v-if="this.settings_modal_active" @exitModal="this.settings_modal_active = false" />
+        <modal-setting-vue v-if="this.settings_modal_active" @exitModal="this.settings_modal_active = false" />
     
 </div>
 </template>
@@ -90,17 +93,15 @@ h1 {
 }
 
 #positionScanQr {
-    width: calc(80vw + 2 * 10px);
     position: relative;
-    margin-top: 55%;
-    margin-left: 50%;
-    transform: translate(-50%, -50%);
+    margin-top: 60px;
+    margin-left: 10px;
 }
 
 #positionOut {
-    position: absolute;
-    top: calc(27.5% + 70vw + 30px);
+    position: relative;
     left: 50%;
+    margin-top: 20px;
     transform: translateX(-50%);
 }
 
@@ -114,5 +115,12 @@ h1 {
     transition: opacity 0.5s ease;
 }
 
+#wholeContainer {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80vw;
+    max-width: 450px;
+} 
 
 </style>

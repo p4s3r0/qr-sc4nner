@@ -1,6 +1,6 @@
 <template>
 <div :class="this.theme">
-    <div id="button" width="40" height="40">
+    <div id="button">
         <div v-if="this.scanner_active" id="containerStream">
             <QrStream @decode="onDecodeEmit"/>
             <button-close-stream @click="this.scanner_active = false; this.$emit('scanClosed')"/>
@@ -64,10 +64,10 @@ methods: {
 #button {
     position: relative;
     background: var(--striped-background);
-    width: 80vw;
     height: 80vw;
     border-radius: 15px;
-    padding: 10px;
+    max-width: 400px;
+    max-height: 400px;
 }
 
 #badge {

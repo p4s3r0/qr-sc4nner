@@ -1,11 +1,5 @@
 <template>
     <router-view />
-    <div class="errorAspectRatio" >
-      <h1>
-        The Aspect Ratio of the Screen does not match the requirements. Please use a Smartphone!
-      </h1>
-    </div>
-
 </template>
 
 <script>
@@ -35,7 +29,6 @@ h1 {
   width: 50vw;
   color: #FFE500;
 }
-
 
 
 </style>

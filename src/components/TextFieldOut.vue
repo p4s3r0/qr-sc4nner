@@ -28,7 +28,8 @@ data() {
 <style scoped>
 #container {
     position: relative;
-    width: calc(90vw - 40px);
+    width: 72vw;
+    max-width: 380px;
     border: 1px solid var(--main-color);
     border-radius: 10px;
     padding: 0px 20px 0px 20px;

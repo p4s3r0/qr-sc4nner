@@ -21,13 +21,14 @@ props: {
 <style scoped>
 #container {
     position: relative;
-    width: calc(70vw - 40px);
+    width: calc(60vw);
     background-color: var(--alpha-color-20);
     border-radius: 10px;
     padding: 5px 20px 5px 20px;
     display: flex;
     margin-bottom: 10px;
-    margin-left: 10vw;
+    max-width: 300px;
+    margin-left: 7%;
 }
 
 p {
