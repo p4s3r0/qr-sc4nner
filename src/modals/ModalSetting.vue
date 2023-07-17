@@ -100,4 +100,8 @@ p {
     left: 15px;
     opacity: 0.5;
 }
+
+h1 {
+    text-align: center;
+}
 </style>
