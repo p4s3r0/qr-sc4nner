@@ -19,7 +19,7 @@
             <button-color-choice color_="gray" @click="changeTheme('theme-gray')"/>
             <button-color-choice color_="white" @click="changeTheme('theme-white')"/>
         </div>
-        <p>@v1.1</p>
+        <p>@v2.0</p>
         <button-back id="positionButtonBack" @click="this.$emit('exitModal')"/>
     </div>
 </template>

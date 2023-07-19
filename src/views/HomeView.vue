@@ -2,6 +2,7 @@
 <div :class="this.theme" id="container">
     <div id="topBar">
         <button-settings @click="this.settings_modal_active = true;" />
+        <button-new-qr @click="this.add_qr_modal_active = true;" />
         <h1>Home</h1>
     </div>
     <div id="wholeContainer">
@@ -32,7 +33,8 @@
     </div>
 
         <modal-setting-vue v-if="this.settings_modal_active" @exitModal="this.settings_modal_active = false" />
-    
+        <modal-create-qr-vue v-if="this.add_qr_modal_active" @exitModal="this.add_qr_modal_active = false" />
+
 </div>
 </template>
 
@@ -43,8 +45,10 @@ import ButtonSettings from '@/components/ButtonSettings.vue';
 import ScanQr from '@/components/ScanQr.vue'
 import TextFieldOut from '@/components/TextFieldOut.vue'
 import TextFieldLastScan from '@/components/TextFieldLastScan.vue';
+import ButtonNewQr from '@/components/ButtonNewQr.vue';
 
 import ModalSettingVue from '@/modals/ModalSetting.vue';
+import ModalCreateQrVue from '@/modals/ModalCreateQr.vue';
 
 export default {
 name: 'App',
@@ -54,13 +58,16 @@ components: {
     TextFieldOut,
     TextFieldLastScan,
     ModalSettingVue,
+    ButtonNewQr,
+    ModalCreateQrVue
 }, 
 data() {
     return { 
         theme: curr_theme,
         out_data: "Scan a QR-Code to see the Content here!",
         last_scan: null,
-        settings_modal_active: false
+        settings_modal_active: false,
+        add_qr_modal_active: false,
     }
 },
 methods: {
