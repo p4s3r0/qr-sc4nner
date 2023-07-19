@@ -14,13 +14,13 @@
             <transition name="lastscan" mode="out-in">
                 <div v-if="this.last_scan == null">
                     <transition name="lastscan" mode="out-in">
-                        <text-field-out v-if="this.out_data != 'Scanning QR-Code...'" :data="this.out_data" style="transition-delay: 0.5s;"/>
-                        <text-field-out v-else :data="this.out_data" />
+                        <text-field-out v-if="this.out_data != 'Scanning QR-Code...'" :data="this.out_data" style="transition-delay: 0.5s;" :valid="false"/>
+                        <text-field-out v-else :data="this.out_data" :valid="false" />
                     </transition>
                 </div>
                 <div v-else>
                     <text-field-last-scan :data="this.last_scan" />
-                    <text-field-out :data="this.out_data" />
+                    <text-field-out :data="this.out_data" :valid="true" />
                 </div>
             </transition>
 
@@ -53,7 +53,7 @@ components: {
     ScanQr,
     TextFieldOut,
     TextFieldLastScan,
-    ModalSettingVue
+    ModalSettingVue,
 }, 
 data() {
     return { 
