@@ -68,6 +68,7 @@ methods: {
     border-radius: 15px;
     max-width: 400px;
     max-height: 400px;
+    padding: 10px;
 }
 
 #badge {

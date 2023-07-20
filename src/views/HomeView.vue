@@ -102,7 +102,6 @@ h1 {
 #positionScanQr {
     position: relative;
     margin-top: 60px;
-    margin-left: 10px;
 }
 
 #positionOut {
